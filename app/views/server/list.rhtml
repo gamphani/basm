@@ -1,0 +1,16 @@
+<% if @servers.blank? %>
+  <p>There are not any servers currently in the system.</p>
+<% else %>
+  <p>These are the current servers in our system</p>
+  <ul id="servers">
+    <% @servers.each do |c| %>
+      <li><%= link_to c.name, {:action => 'show', :id => c.id} -%>
+      <b><%= link_to 'Edit', {:action => "edit", :id => c.id} %></b>
+      <b> <%= link_to "Delete", {:action => 'delete', :id => c.id},
+        :confirm => "Are you sure you want to delete #{c.name.upcase}?" %></b>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<p><%= link_to "Add new Server", {:action => 'new' }%></p>
+

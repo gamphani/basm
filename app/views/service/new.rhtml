@@ -1,0 +1,9 @@
+<h1>Add new service</h1>
+<%= form_tag :action => 'create' %>
+<p><label for="service_name">Name</label>:</p>
+<%= text_field 'service', 'name' %></p>
+<p><label for="service_description">Description</label>:
+<%= text_field 'service', 'description' %></p>
+<%= submit_tag "Create" %>
+<%= link_to 'Back', {:action => 'list'} %>
+

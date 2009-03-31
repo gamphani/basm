@@ -1,0 +1,27 @@
+production:
+  adapter: mysql
+  database: basm_production 
+  username: basm
+  password: letmein
+  host: localhost
+
+development:
+  adapter: mysql
+  database: basm_development
+  username: basm
+  password: letmein
+  host: localhost
+
+test:
+  adapter: mysql
+  database: basm_test
+  username: root
+  password: 
+  host: localhost
+
+healthdata:
+  adapter: mysql
+  database: healthdata
+  username: openmrs
+  password: letmein    
+  host: localhost

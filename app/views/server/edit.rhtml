@@ -1,0 +1,10 @@
+<h1>Edit Server Detail</h1>
+<%= form_tag :action => 'update', :id => @server %>
+<p><label for="server_name">Name</label>:
+<%= text_field 'server', 'name' %></p>
+<p><label for="server_location">Location</label>:
+<%= text_field 'server', 'location' %></p>
+<%= submit_tag "Save changes" %>
+<%= end_form_tag %>
+<%= link_to 'Back', {:action => 'list' } %>
+

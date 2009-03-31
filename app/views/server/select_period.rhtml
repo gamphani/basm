@@ -1,0 +1,7 @@
+
+<%= form_tag :action => 'line_graph_report', :id => @server.id, :service_id => @service.id %>
+<%=date_select "post", "written_on"%>
+<%= submit_tag "Display" %>
+<%= link_to 'Back', {:action => 'list'} %>
+
+

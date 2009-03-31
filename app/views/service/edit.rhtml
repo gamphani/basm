@@ -1,0 +1,10 @@
+<h1>Edit Service Detail</h1>
+<%= form_tag :action => 'update', :id => @service %>
+<p><label for="service_name">Name</label>:
+<%= text_field 'service', 'name' %></p>
+<p><label for="service_description">Description</label>:
+<%= text_field 'service', 'description' %></p>
+<%= submit_tag "Save changes" %>
+<%= end_form_tag %>
+<%= link_to 'Back', {:action => 'list' } %>
+

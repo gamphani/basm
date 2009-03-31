@@ -1,0 +1,2 @@
+class ObservationController < ApplicationController
+end

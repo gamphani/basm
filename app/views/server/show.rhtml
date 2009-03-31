@@ -1,0 +1,18 @@
+<h1><%= @server.name %></h1>
+<% if @services.blank? %>
+  <p>There are no any services currently for .</p>
+<% else %>
+  <p><%= "These are the current services being monitored for #{@server.name.upcase}" %></p>
+
+   <ul id="servers">
+
+<% @services.each do |c| %>
+  <li><%= link_to c.name, {:action => 'select_period', :id => @server.id, :service_id => c.id} %>
+      </li>
+    <% end %>
+  </ul>
+<% end %>
+<p><strong>Location: </strong> <%= @server.location%><br /></p>
+<hr />
+<%= link_to 'Back', {:action => 'list'} %>
+

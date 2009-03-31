@@ -1,0 +1,9 @@
+<h1>Add new server</h1>
+<%= form_tag :action => 'create' %>
+<p><label for="server_name">Name</label>:</p>
+<%= text_field 'server', 'name' %></p>
+<p><label for="server_location">Location</label>:
+<%= text_field 'server', 'location' %></p>
+<%= submit_tag "Create" %>
+<%= link_to 'Back', {:action => 'list'} %>
+

@@ -1,8 +1,8 @@
 production:
   adapter: mysql
   database: basm_production 
-  username: basm
-  password: letmein
+  username: root
+  password: 
   host: localhost
 
 development:

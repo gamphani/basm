@@ -63,10 +63,9 @@ layout 'standard'
 
 #Need to emmpty contents of stats.csv to avoid importing duplicate data on next import
 #Dirty huh?  
-   f = File.open("#{RAILS_ROOT}/public/#{@server.name}/stats.csv",'w')
-  f.close
-    
-    
+    f = File.open("#{RAILS_ROOT}/public/#{@server.name}/stats.csv",'w')
+    f.close
+        
     g = Gruff::Line.new()
     g.title = "#{@service.name} variations"
     g.font = File.expand_path('artwork/fonts/Vera.ttf', RAILS_ROOT)

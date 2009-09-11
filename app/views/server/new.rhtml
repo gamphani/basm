@@ -1,9 +1,24 @@
 <h1>Add new server</h1>
 <%= form_tag :action => 'create' %>
+<table cellspacing=0 cellpadding=0 border=0 width=100% align=center>
+<tr>
+<td width=15% valign=top>
 <p><label for="server_name">Name</label>:</p>
-<%= text_field 'server', 'name' %></p>
-<p><label for="server_location">Location</label>:
-<%= text_field 'server', 'location' %></p>
-<%= submit_tag "Create" %>
-<%= link_to 'Back', {:action => 'list'} %>
+</td>
+<td width=85% valign=top>
+<%= text_field 'server', 'name' %>
+</td>
+</tr>
+<tr>
+<td width=15% valign=top>
+<p><label for="server_location">Location</label>:</p>
+</td>
+<td width=85% valign=top>
+<%= text_field 'server', 'location' %>
+</td>
+</tr>
+</table>
+<p style="float:left"><%= submit_tag "Create" %></p>
+
+<p style="float:right"><%= link_to 'Back', {:action => 'list'} %></p>
 

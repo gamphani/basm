@@ -1,0 +1,24 @@
+
+<font color=#003399 type=arial size=3><b>New User details</b></font><br/><br/>
+<%= flash[:notice] %>
+
+<% form_tag :controller => 'user', :action => 'create' do %>
+<table width=100% cellspacing=3 cellpadding=3 border=0>
+<tr>
+<td width=35% valign=top><font color=#003399 type=arial size=2><div align=right>Username:</div></font></td>
+<td width=65% valign=top><%= text_field 'user', 'uname' %></td>
+</tr>
+<tr>
+<td width=35% valign=top><font color=#003399 type=arial size=2><div align=right>Password:</div></font></td>
+<td width=65% valign=top><%= text_field 'user', 'passwd' %></td>
+</tr>
+<tr>
+<td width=35% valign=top><font color=#003399 type=arial size=2><div align=right>Role:</div></font></td>
+<td width=65% valign=top><%= select('user', 'role', {'Administrator' => 'Administrator', 'Standard' => 'Standard', 'Regular' => 'Regular'}) %></td>
+</tr>
+<tr>
+<td width=35% valign=top><br/><br/><p style="float:right"><%= submit_tag 'Add new user' %></p></td>
+<td width=65% valign=top><br/><br/><p style="float:right"><%= link_to '<b>Home</b>', {:controller => 'server', :action => 'list'} %></p></td>
+</tr>
+</table>
+<% end %>

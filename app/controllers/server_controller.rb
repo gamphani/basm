@@ -2,7 +2,7 @@ require 'rubygems'
 require 'fastercsv'
 require 'ar-extensions'
 class ServerController < ApplicationController
-layout 'standard'
+#layout 'standard'
   def list
     @servers = Server.find(:all)
   end

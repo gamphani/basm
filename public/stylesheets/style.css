@@ -5,13 +5,14 @@ body {
    background-color: #fff;
 }
 a:link, a:active, a:visited {
-   color: #CD0000;
+   	color: #CD0000;
+	text-decoration: none;
 }
 input { 
    margin-bottom: 5px;
 }
 p { 
-   line-height: 150%;
+  /* line-height: 150%;*/
 }
 div#container {
    width: 760px;
@@ -22,13 +23,37 @@ div#header {
    padding-bottom: 15px;
 }
 div#content {
-   float: left;
-   width: 450px;
-   padding: 10px;
+   	float: center;
+   	width: 450px;
+   	padding: 10px;
+	margin: 0 auto;
+	border-color: #666699;
+	border-collapse: collapse;
+	border-style: solid;
+	-moz-border-radius-topleft: 4px;
+        -moz-border-radius-topright: 4px;
+        -moz-border-radius-bottomleft: 4px;
+        -moz-border-radius-bottomright: 4px;
 }
 div#content h3 {
    margin-top: 15px;
 }
+
+div#logoff {
+	margin: 0 auto;
+	font-size: 2;
+	font-weight: bold;
+	float: right;
+	color: red;
+	border-color: blue;
+	border-style: solid;	
+	border-radius: 10px;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-moz-border-radius-bottomleft: 5px;
+	-moz-border-radius-bottomright: 5px;	
+}
+
 ul#servers {
    list-style-type: none;
 }

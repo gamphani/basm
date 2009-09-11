@@ -1,0 +1,26 @@
+
+<%=  flash[:notice] %>
+
+<% session[:username] = nil %>
+
+<table width=100% cellspacing=3 cellpadding=3 border=0 align=center>
+<% form_tag :controller => 'user', :action => 'index' do %>
+<tr>
+<td width=25% valign=top></td>
+<td width=75% valign=top><font color=#003399 type=arial size=3><b>Log in details</b></font><br/><br/></td>
+</tr>
+<tr>
+<td width=25% valign=top><font color=#003399 type=arial size=2><div align=right>Username:</div></font></td>
+<td width=75% valign=top><%= text_field 'user', 'uname' %></td>
+</tr>
+<tr>
+<td width=25% valign=top><font color=#003399 type=arial size=2><div align=right>Password:</div></font></td>
+<td width=75% valign=top><%= password_field 'user', 'passwd' %></td>
+</tr>
+<tr>
+<td width=25% valign=top> <!-- <input type='text' name'helsinki' value='' size=8 > --> </td>
+<td width=75% valign=top><br/><%= submit_tag 'Login' %></td>
+</tr>
+<% end %>
+</table>
+

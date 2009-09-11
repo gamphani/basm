@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;.
+    charset=iso-8859-1" />
+    <meta http-equiv="Content-Language" content="en-us" />
+    <title>Baobab Server Monitoring Software</title>
+    <%= stylesheet_link_tag "style" %>
+	<%#= javascript_include_tag "blinktxt" %>
+  </head>
+
+
+<!--
+<body id="library" onload="setInterval('blinkIt()',500)">
+
+<p style="float:right">
+<%#= link_to " <blink><font color=red><b>CLICK ME FOR FAULT SOLUTION</b></font></blink>", {:controller => "user", :action => "new" } %>
+</p>
+-->
+
+<body id="library" onLoad="startclock(); timerONE=window.setTimeout"> 
+
+<script Language="JavaScript">
+        var timerID = null;
+        var timerRunning = false;
+        
+        function stopclock() {
+                if (timerRunning) clearTimeout(timerID);
+                timerRunning = false;
+        }
+
+        function localtime(offset,summertime,m1,m2) {
+                var now = new Date();
+                var hours = now.getHours() + offset + now.getTimezoneOffset()/60;
+                var m = now.getMonth()+1;
+                if (m1<m2) {
+                        if (m>=m1&&m<=m2) hours += summertime;
+                } 
+                else {
+                        if ((m>=m1&&m<=12)||(m>=1&&m<=m2)) hours += summertime;
+                } 
+                
+                var minutes = now.getMinutes();
+                var seconds = now.getSeconds();
+                var t = ((hours>24) ? hours-24: ((hours<0) ? hours+24: hours));
+                if (t<10) t = "0" + t;
+                t += ((minutes < 10) ? ":0" : ":") + minutes;
+                t += ((seconds < 10) ? ":0" : ":") + seconds;
+        
+                return t;
+        }
+
+	function returnseconds(offset,summertime,m1,m2){
+		var now = new Date();
+		var seconds = now.getSeconds();
+
+		return seconds;
+	}
+
+        function showtime() {
+                // document.clock.gmtMinus8.value= localtime(-8,0,5,9);
+
+                //document.clock.malawi.value = localtime(2,0,5,9);
+
+		var timeS = returnseconds(2,0,5,9);
+
+		var timeMod = timeS % 2;
+
+		//document.clock.seconds.value = timeS;
+
+		if(timeMod == 0)
+		{
+			document.clock.seconds.value = "CHECK OUT HERE";	// "THERE IS A FAULT HERE.";	//returnseconds(2,0,5,9);
+		}
+		else
+		{
+			document.clock.seconds.value = "";	timeMod;
+		}
+        
+                // document.clock.gmtPlus8.value = localtime(8,0,5,9);
+
+                timerID = setTimeout("showtime()",1000);
+
+                timerRunning = true;
+	}
+
+	function startclock () {
+
+        	// Make sure the clock is stopped
+
+        	stopclock();
+
+        	showtime();
+	}
+
+</script>
+<!--
+<form name="clock" onSubmit="0">
+        <input type="text" name="malawi" size=8 value="">
+</form>
+-->
+
+
+    <div id="container">
+      <div id="header">
+        <h1>Baobab Server Monitoring System</h1>
+	<p style="float:right"> <form name="clock" onSubmit="0"> <!-- <input name="malawi" size=8 value="" > --> <input name="seconds"  value=""></form> </p>
+        <h3>Sytem powered by Ruby on Rails</h3>
+      </div>
+	<div id="logoff"><%= link_to "Log off", {:controller => 'user', :action => 'index' } %></div>
+      <div id="content">
+        <%= yield -%>
+      </div>
+      <div id="sidebar"></div>
+    </div>
+  </body>
+</html>
+
+
